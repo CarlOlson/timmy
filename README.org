@@ -1,0 +1,20 @@
+* About
+Timmy's first type checker using annotated applications!
+
+#+BEGIN_SRC elixir
+  ~/timmy$ mix -S iex
+
+  iex> ast = Timmy.parse "(\\x.yx[B])z[B] : A"
+  {:app,
+   {:lambda, {'x', 'B'}, {:app, {:var, 'y', {'B', 'A'}}, {:var, 'x', 'B'}, 'A'},
+    {'B', 'A'}}, {:var, 'z', 'B'}, 'A'}
+
+  iex> Timmy.print_types ast
+  (λx.yx)z : A
+    λx.yx : B -> A
+      yx : A
+        y : B -> A
+        x : B
+    z : B
+  :ok
+#+END_SRC
