@@ -18,3 +18,13 @@ Timmy's first type checker using annotated applications!
     z : B
   :ok
 #+END_SRC
+
+- Code was written for simplicity over efficiency.
+
+- This doesn't allow evaluation of lambda expressions, only typing of
+  them, but that would be trivial to add.
+
+- I'm unsure how faithful this is, I'll update it if there are any
+  mistakes.
+
+- Code has tests!
